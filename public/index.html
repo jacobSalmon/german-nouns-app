@@ -7,17 +7,22 @@
   <title>German Nouns</title>
 </head>
 <body>
-  <h1>Random German Noun</h1>
-  <div id="noun-container">
-    <button id="fetch-noun">Get Random Noun</button>
-    <div id="noun"></div>
-  </div>
+    <h1>Random Noun App</h1>
+    <button id="get-random-noun">Get Random Noun</button>
+    <div id="noun-display"></div>
+    <button id="add-noun">Add Noun</button>
 
+  
+
+   
+
+
+   
   <script>
-    document.getElementById('fetch-noun').addEventListener('click', async () => {
+    document.getElementById('get-random-noun').addEventListener('click', async () => {
       const response = await fetch('/random-noun');
       const noun = await response.json();
-      document.getElementById('noun').innerHTML = `
+      document.getElementById('noun-display').innerHTML = `
         <p><strong>Noun:</strong> ${noun.noun}</p>
         <p><strong>Artikel:</strong> ${noun.artikel}</p>
         <p><strong>Sentence:</strong> ${noun.sentence}</p>
@@ -25,6 +30,13 @@
         <p><strong>Translation:</strong> ${noun.translation}</p>
       `;
     });
+
+    document.getElementById('add-noun').addEventListener('click', () => {
+    window.location.href = '/add-noun';
+});
+
   </script>
+  
+
 </body>
 </html>
