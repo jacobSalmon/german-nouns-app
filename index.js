@@ -2,6 +2,7 @@ console.log("Starting the server...");
 import express from 'express';
 import { MongoClient, ServerApiVersion } from 'mongodb';
 import dotenv from 'dotenv';
+import path from 'path';
 
 // Load environment variables from a .env file
 dotenv.config();
@@ -9,14 +10,27 @@ dotenv.config();
 const app = express();
 const port = 3001;
 
+// Serve static files from the 'public' directory
+app.use(express.static('public'));
+
 app.get('/', (req, res) => {
-  res.send('Hello World!');
+  //res.send('Hello World!');
+  res.sendFile(path.join(__dirname, 'public', 'index.html'));
 });
 
 app.listen(port, () => {
   console.log(`Example app listening at http://localhost:${port}`);
 });
 
+// Endpoint to get a random noun
+app.get('/random-noun', async (req, res) => {
+  try {
+    const noun = await getRandomNoun();
+    res.json(noun);
+  } catch (e) {
+    res.status(500).send('Error fetching random noun');
+  }
+});
 
 
 
@@ -43,19 +57,38 @@ async function run() {
 
 
     // Create a new noun: THE ACTUAL DATA NEED TO BE VARIABLES OBVIOUSLY, this is just a test.
+    
     /*
     const newNoun = { 
-      noun: "Katze", 
-      artikel: "die",
-      sentence: "Die Katze ist schwarz.",
-      grammar: "viele feminine Nomen enden auf -e",
-      translation: "cat"
+      noun: "Haus", 
+      artikel: "Das",
+      sentence: "Das Haus ist groß",
+      grammar: "Noun",
+      translation: "House"
     };
+    
     await createNoun(client, newNoun);
-*/
+
 
     // List the databases available:
-    // await listDatabases(client);
+     await listDatabases(client);
+
+    // List the nouns in the database:
+    
+    await getNouns().then(nouns => {
+      console.log("Nouns:");
+      nouns.forEach(noun => console.log(noun));
+    }
+    );
+    */
+
+    // Get a random noun from the database:
+    await getRandomNoun().then(noun => {
+      console.log("Random noun:");
+      console.log(noun);
+    });
+
+
 
   } catch (e) {
     console.error(e);
@@ -65,6 +98,7 @@ async function run() {
     await client.close();
   }
 }
+
 run().catch(console.dir);
 
 // save new noun in the database
@@ -78,6 +112,24 @@ async function listDatabases(client) {
   console.log("Databases:");
   databasesList.databases.forEach(db => console.log(` - ${db.name}`));
 }
+
+async function getNouns() {
+  await client.connect();
+  const nouns = await client.db("German").collection("german_nouns").find({}).toArray();
+  await client.close();
+  return nouns;
+}
+
+// Function to get a random noun from the database
+async function getRandomNoun() {
+  await client.connect();
+  const count = await client.db("German").collection("german_nouns").countDocuments();
+  const randomIndex = Math.floor(Math.random() * count);
+  const randomNoun = await client.db("German").collection("german_nouns").find().limit(1).skip(randomIndex).toArray();
+  await client.close();
+  return randomNoun[0];
+}
+
 
 // *******************  END OF MONGODB *******************
 

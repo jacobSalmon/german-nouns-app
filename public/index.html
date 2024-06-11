@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="styles.css">
+  <title>German Nouns</title>
+</head>
+<body>
+  <h1>Random German Noun</h1>
+  <div id="noun-container">
+    <button id="fetch-noun">Get Random Noun</button>
+    <div id="noun"></div>
+  </div>
+
+  <script>
+    document.getElementById('fetch-noun').addEventListener('click', async () => {
+      const response = await fetch('/random-noun');
+      const noun = await response.json();
+      document.getElementById('noun').innerHTML = `
+        <p><strong>Noun:</strong> ${noun.noun}</p>
+        <p><strong>Artikel:</strong> ${noun.artikel}</p>
+        <p><strong>Sentence:</strong> ${noun.sentence}</p>
+        <p><strong>Grammar:</strong> ${noun.grammar}</p>
+        <p><strong>Translation:</strong> ${noun.translation}</p>
+      `;
+    });
+  </script>
+</body>
+</html>
