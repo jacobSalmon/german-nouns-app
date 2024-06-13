@@ -11,8 +11,8 @@
     <form id="add-noun-form">
         <label for="noun">Noun:</label>
         <input type="text" id="noun" name="noun" required><br><br>
-        <label for="artikel">Artikel:</label>
-        <input type="text" id="artikel" name="artikel" required><br><br>
+        <label for="article">Article:</label>
+        <input type="text" id="article" name="article" required><br><br>
         <label for="sentence">Sentence:</label>
         <input type="text" id="sentence" name="sentence" required><br><br>
         <label for="grammar">Grammar:</label>
@@ -30,7 +30,7 @@
             const formData = new FormData(event.target);
             const nounData = {
                 noun: formData.get("noun"),
-                artikel: formData.get("artikel"),
+                article: formData.get("article"),
                 sentence: formData.get("sentence"),
                 grammar: formData.get("grammar"),
                 translation: formData.get("translation"),

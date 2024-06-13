@@ -88,7 +88,7 @@ async function run() {
     await client.db("admin").command({ ping: 1 });
     console.log("Pinged your deployment. You successfully connected to MongoDB!");
 
-
+ 
     // Create a new noun: THE ACTUAL DATA NEED TO BE VARIABLES OBVIOUSLY, this is just a test.
     
     /*
@@ -164,9 +164,13 @@ async function getRandomNoun() {
   const count = await client.db("German").collection("german_nouns").countDocuments();
   const randomIndex = Math.floor(Math.random() * count);
   const randomNoun = await client.db("German").collection("german_nouns").find().limit(1).skip(randomIndex).toArray();
-  //await client.close();
+ // await client.close();
   return randomNoun[0];
 }
+
+
+
+
 
 
 // *******************  END OF MONGODB *******************
