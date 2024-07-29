@@ -15,7 +15,7 @@ h1 {
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    height: 100vh;
+    height: calc(100vh - 60px); /* Adjust height to account for the button */
 }
 
 .card {
@@ -43,6 +43,27 @@ button {
 
 button:hover {
     background-color: #0056b3;
+}
+
+.admin-button-container {
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+}
+
+.admin-button {
+    background-color: #d6d6d6; /* Lighter gray color */
+    color: #333;
+    padding: 8px 16px;
+    font-size: 14px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.admin-button:hover {
+    background-color: #c0c0c0; /* Slightly darker gray */
 }
 
 #noun-display {
@@ -75,7 +96,7 @@ button:hover {
     margin: 20px auto 0;
     font-size: 16px;
     cursor: pointer;
-    background-color: #007bff;;
+    background-color: #007bff;
     color: #fff;
     border: none;
     border-radius: 5px;
@@ -84,5 +105,5 @@ button:hover {
 }
 
 #next-noun:hover {
-    background-color: #007bff;;
+    background-color: #0056b3;
 }

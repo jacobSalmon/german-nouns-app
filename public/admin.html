@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="styles.css">
+  <title>Admin - Search Nouns</title>
+</head>
+<body>
+  <div class="container">
+    <div class="card">
+      <h1>Admin - Search Nouns</h1>
+      <input type="text" id="search-noun" placeholder="Enter noun to search">
+      <button id="search-button">Search</button>
+      <div id="search-results"></div>
+      <button onclick="location.href='/'" style="margin-top: 20px;">Back to Quiz</button>
+    </div>
+  </div>
+
+  <script>
+    document.getElementById('search-button').addEventListener('click', async () => {
+      const noun = document.getElementById('search-noun').value;
+      if (!noun) {
+        alert('Please enter a noun to search');
+        return;
+      }
+
+      try {
+        const response = await fetch(`/search-noun?noun=${noun}`);
+        const result = await response.json();
+        displayResults(result);
+      } catch (error) {
+        console.error('Error fetching noun:', error);
+        document.getElementById('search-results').innerHTML = '<p>Error fetching noun.</p>';
+      }
+    });
+
+    function displayResults(result) {
+      const resultsDiv = document.getElementById('search-results');
+      if (result.error) {
+        resultsDiv.innerHTML = `<p>${result.error}</p>`;
+      } else {
+        resultsDiv.innerHTML = `
+          <p><strong>Noun:</strong> ${result.noun}</p>
+          <p><strong>Article:</strong> ${result.article}</p>
+          <p><strong>Sentence:</strong> ${result.sentence}</p>
+          <p><strong>Grammar:</strong> ${result.grammar}</p>
+          <p><strong>Translation:</strong> ${result.translation}</p>
+        `;
+      }
+    }
+  </script>
+</body>
+</html>

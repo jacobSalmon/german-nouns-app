@@ -8,21 +8,21 @@
 </head>
 <body>
   <div class="container">
-
     <div class="card">
       <h1>German Nouns Quiz</h1>
-    <div id="noun-display"></div>
-    <div id="quiz-buttons">
-      <button class="article-button" data-article="Der">Der</button>
-      <button class="article-button" data-article="Die">Die</button>
-      <button class="article-button" data-article="Das">Das</button>
-    </div>
-    <div id="result-display"></div>
-    <button id="next-noun" style="display:none;">Next Noun</button>
+      <div id="noun-display"></div>
+      <div id="quiz-buttons">
+        <button class="article-button" data-article="Der">Der</button>
+        <button class="article-button" data-article="Die">Die</button>
+        <button class="article-button" data-article="Das">Das</button>
+      </div>
+      <div id="result-display"></div>
+      <button id="next-noun" style="display:none;">Next Noun</button>
     </div>
   </div>
-
-
+  <div class="admin-button-container">
+    <button onclick="location.href='/admin'" class="admin-button">Go to Admin</button>
+  </div>
 
   <script>
     let currentNoun = null;

@@ -64,6 +64,27 @@ app.listen(port, () => {
 });
 
 
+// Endpoint to search for a  noun on admin page
+app.get('/search-noun', async (req, res) => {
+  const noun = req.query.noun;
+  try {
+    const result = await searchNoun(client, noun);
+    if (result) {
+      res.json(result);
+    } else {
+      res.json({ error: 'Noun not found' });
+    }
+  } catch (e) {
+    console.error('Error searching noun:', e);
+    res.status(500).send(`Error searching noun: ${e.message}`);
+  }
+});
+
+app.get('/admin', (req, res) => {
+  res.sendFile(path.join(rootDir, 'public', 'admin.html'));
+});
+
+
 
 
 
@@ -168,6 +189,12 @@ async function getRandomNoun() {
   return randomNoun[0];
 }
 
+// Function to search for a noun in the database
+async function searchNoun(client, noun) {
+  await client.connect();
+  const result = await client.db("German").collection("german_nouns").findOne({ noun: noun });
+  return result;
+}
 
 
 
