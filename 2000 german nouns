@@ -3307,245 +3307,282 @@ OVENFOR UPLOADED
 442. Crew	Die Besatzung	Die Besatzungen
 443. Fall	Der Herbst	Die Fälle
 
-[
-  {
-    "noun": "Ehe",
-    "sentence": "Die Ehe ist eine lebenslange Verbindung.",
-    "grammar": "Feminine",
-    "translation": "Marriage"
-  },
-  {
-    "noun": "Stirn",
-    "sentence": "Die Stirn des Kindes ist glatt.",
-    "grammar": "Feminine",
-    "translation": "Forehead"
-  },
-  {
-    "noun": "Sturm",
-    "sentence": "Der Sturm bringt heftigen Regen mit sich.",
-    "grammar": "Masculine",
-    "translation": "Storm"
-  },
-  {
-    "noun": "Durchgang",
-    "sentence": "Der Durchgang führt zum Garten.",
-    "grammar": "Masculine",
-    "translation": "Doorway"
-  },
-  {
-    "noun": "Situation",
-    "sentence": "Die Situation erfordert schnelles Handeln.",
-    "grammar": "Feminine",
-    "translation": "Situation"
-  },
-  {
-    "noun": "Theke",
-    "sentence": "Die Theke ist voller leckerer Snacks.",
-    "grammar": "Feminine",
-    "translation": "Counter"
-  },
-  {
-    "noun": "Nachbar",
-    "sentence": "Der Nachbar grüßt freundlich.",
-    "grammar": "Masculine",
-    "translation": "Neighbor"
-  },
-  {
-    "noun": "Foto",
-    "sentence": "Das Foto ist gut gelungen.",
-    "grammar": "Neuter",
-    "translation": "Photo"
-  },
-  {
-    "noun": "Bühne",
-    "sentence": "Die Bühne ist bereit für die Aufführung.",
-    "grammar": "Feminine",
-    "translation": "Stage"
-  },
-  {
-    "noun": "Treffen",
-    "sentence": "Das Treffen findet im Konferenzraum statt.",
-    "grammar": "Neuter",
-    "translation": "Meeting"
-  },
-  {
-    "noun": "Krankenschwester",
-    "sentence": "Die Krankenschwester kümmert sich um die Patienten.",
-    "grammar": "Feminine",
-    "translation": "Nurse"
-  },
-  {
-    "noun": "Sicherheit",
-    "sentence": "Die Sicherheit der Passagiere hat oberste Priorität.",
-    "grammar": "Feminine",
-    "translation": "Security"
-  },
-  {
-    "noun": "Waffe",
-    "sentence": "Die Waffe wird von der Polizei verwendet.",
-    "grammar": "Feminine",
-    "translation": "Weapon"
-  },
-  {
-    "noun": "Ereignis",
-    "sentence": "Das Ereignis war ein großer Erfolg.",
-    "grammar": "Neuter",
-    "translation": "Event"
-  },
-  {
-    "noun": "Decke",
-    "sentence": "Die Decke des Raumes ist hoch.",
-    "grammar": "Feminine",
-    "translation": "Ceiling"
-  },
-  {
-    "noun": "Motor",
-    "sentence": "Der Motor des Autos ist sehr leistungsstark.",
-    "grammar": "Masculine",
-    "translation": "Engine"
-  },
-  {
-    "noun": "Geschenk",
-    "sentence": "Das Geschenk ist schön verpackt.",
-    "grammar": "Neuter",
-    "translation": "Gift"
-  },
-  {
-    "noun": "Restaurant",
-    "sentence": "Das Restaurant hat exzellente Bewertungen.",
-    "grammar": "Neuter",
-    "translation": "Restaurant"
-  },
-  {
-    "noun": "Brett",
-    "sentence": "Das Brett ist aus Holz.",
-    "grammar": "Neuter",
-    "translation": "Board"
-  },
-  {
-    "noun": "Flur",
-    "sentence": "Der Flur führt zu den Schlafzimmern.",
-    "grammar": "Masculine",
-    "translation": "Hallway"
-  },
-  {
-    "noun": "Armee",
-    "sentence": "Die Armee verteidigt das Land.",
-    "grammar": "Feminine",
-    "translation": "Army"
-  },
-  {
-    "noun": "Aufwand",
-    "sentence": "Der Aufwand für das Projekt war enorm.",
-    "grammar": "Masculine",
-    "translation": "Effort"
-  },
-  {
-    "noun": "Osten",
-    "sentence": "Der Osten des Landes ist bekannt für seine Natur.",
-    "grammar": "Masculine",
-    "translation": "East"
-  },
-  {
-    "noun": "Agent",
-    "sentence": "Der Agent arbeitet undercover.",
-    "grammar": "Masculine",
-    "translation": "Agent"
-  },
-  {
-    "noun": "Zukunft",
-    "sentence": "Die Zukunft ist voller Möglichkeiten.",
-    "grammar": "Feminine",
-    "translation": "Future"
-  },
-  {
-    "noun": "Hose",
-    "sentence": "Die Hose passt perfekt.",
-    "grammar": "Feminine",
-    "translation": "Pant"
-  },
-  {
-    "noun": "Leder",
-    "sentence": "Das Leder ist von hoher Qualität.",
-    "grammar": "Neuter",
-    "translation": "Leather"
-  },
-  {
-    "noun": "Flug",
-    "sentence": "Der Flug dauert drei Stunden.",
-    "grammar": "Masculine",
-    "translation": "Flight"
-  },
-  {
-    "noun": "Sex",
-    "sentence": "Der Sex sollte immer einvernehmlich sein.",
-    "grammar": "Masculine",
-    "translation": "Sex"
-  },
-  {
-    "noun": "Gericht",
-    "sentence": "Das Gericht entscheidet über den Fall.",
-    "grammar": "Neuter",
-    "translation": "Court"
-  },
-  {
-    "noun": "Kurs",
-    "sentence": "Der Kurs beginnt um 10 Uhr.",
-    "grammar": "Masculine",
-    "translation": "Course"
-  },
-  {
-    "noun": "Schmutz",
-    "sentence": "Der Schmutz muss weggekehrt werden.",
-    "grammar": "Masculine",
-    "translation": "Dirt"
-  },
-  {
-    "noun": "Ei",
-    "sentence": "Das Ei ist frisch vom Bauernhof.",
-    "grammar": "Neuter",
-    "translation": "Egg"
-  },
-  {
-    "noun": "Kinn",
-    "sentence": "Das Kinn des Mannes ist markant.",
-    "grammar": "Neuter",
-    "translation": "Chin"
-  },
-  {
-    "noun": "Fremde",
-    "sentence": "Der Fremde fragte nach dem Weg.",
-    "grammar": "Masculine",
-    "translation": "Stranger"
-  },
-  {
-    "noun": "Vergnügen",
-    "sentence": "Das Vergnügen, neue Dinge zu entdecken, ist groß.",
-    "grammar": "Neuter",
-    "translation": "Pleasure"
-  },
-  {
-    "noun": "Detail",
-    "sentence": "Das Detail macht den Unterschied.",
-    "grammar": "Neuter",
-    "translation": "Detail"
-  },
-  {
-    "noun": "Besatzung",
-    "sentence": "Die Besatzung des Schiffes ist hoch qualifiziert.",
-    "grammar": "Feminine",
-    "translation": "Crew"
-  },
-  {
-    "noun": "Herbst",
-    "sentence": "Der Herbst bringt bunte Blätter.",
-    "grammar": "Masculine",
-    "translation": "Fall"
-  }
-]
+{
+  "noun": "Ehe",
+  "article": "Die",
+  "sentence": "Die Ehe ist eine lebenslange Verbindung.",
+  "grammar": "Feminine",
+  "translation": "Marriage"
+},
+{
+  "noun": "Stirn",
+  "article": "Die",
+  "sentence": "Die Stirn des Kindes ist glatt.",
+  "grammar": "Feminine",
+  "translation": "Forehead"
+},
+{
+  "noun": "Sturm",
+  "article": "Der",
+  "sentence": "Der Sturm bringt heftigen Regen mit sich.",
+  "grammar": "Masculine",
+  "translation": "Storm"
+},
+{
+  "noun": "Durchgang",
+  "article": "Der",
+  "sentence": "Der Durchgang führt zum Garten.",
+  "grammar": "Masculine",
+  "translation": "Doorway"
+},
+{
+  "noun": "Situation",
+  "article": "Die",
+  "sentence": "Die Situation erfordert schnelles Handeln.",
+  "grammar": "Feminine",
+  "translation": "Situation"
+},
+{
+  "noun": "Theke",
+  "article": "Die",
+  "sentence": "Die Theke ist voller leckerer Snacks.",
+  "grammar": "Feminine",
+  "translation": "Counter"
+},
+{
+  "noun": "Nachbar",
+  "article": "Der",
+  "sentence": "Der Nachbar grüßt freundlich.",
+  "grammar": "Masculine",
+  "translation": "Neighbor"
+},
+{
+  "noun": "Foto",
+  "article": "Das",
+  "sentence": "Das Foto ist gut gelungen.",
+  "grammar": "Neuter",
+  "translation": "Photo"
+},
+{
+  "noun": "Bühne",
+  "article": "Die",
+  "sentence": "Die Bühne ist bereit für die Aufführung.",
+  "grammar": "Feminine",
+  "translation": "Stage"
+},
+{
+  "noun": "Treffen",
+  "article": "Das",
+  "sentence": "Das Treffen findet im Konferenzraum statt.",
+  "grammar": "Neuter",
+  "translation": "Meeting"
+},
+{
+  "noun": "Krankenschwester",
+  "article": "Die",
+  "sentence": "Die Krankenschwester kümmert sich um die Patienten.",
+  "grammar": "Feminine",
+  "translation": "Nurse"
+},
+{
+  "noun": "Sicherheit",
+  "article": "Die",
+  "sentence": "Die Sicherheit der Passagiere hat oberste Priorität.",
+  "grammar": "Feminine",
+  "translation": "Security"
+},
+{
+  "noun": "Waffe",
+  "article": "Die",
+  "sentence": "Die Waffe wird von der Polizei verwendet.",
+  "grammar": "Feminine",
+  "translation": "Weapon"
+},
+{
+  "noun": "Ereignis",
+  "article": "Das",
+  "sentence": "Das Ereignis war ein großer Erfolg.",
+  "grammar": "Neuter",
+  "translation": "Event"
+},
+{
+  "noun": "Decke",
+  "article": "Die",
+  "sentence": "Die Decke des Raumes ist hoch.",
+  "grammar": "Feminine",
+  "translation": "Ceiling"
+},
+{
+  "noun": "Motor",
+  "article": "Der",
+  "sentence": "Der Motor des Autos ist sehr leistungsstark.",
+  "grammar": "Masculine",
+  "translation": "Engine"
+},
+{
+  "noun": "Geschenk",
+  "article": "Das",
+  "sentence": "Das Geschenk ist schön verpackt.",
+  "grammar": "Neuter",
+  "translation": "Gift"
+},
+{
+  "noun": "Restaurant",
+  "article": "Das",
+  "sentence": "Das Restaurant hat exzellente Bewertungen.",
+  "grammar": "Neuter",
+  "translation": "Restaurant"
+},
+{
+  "noun": "Brett",
+  "article": "Das",
+  "sentence": "Das Brett ist aus Holz.",
+  "grammar": "Neuter",
+  "translation": "Board"
+},
+{
+  "noun": "Flur",
+  "article": "Der",
+  "sentence": "Der Flur führt zu den Schlafzimmern.",
+  "grammar": "Masculine",
+  "translation": "Hallway"
+},
+{
+  "noun": "Armee",
+  "article": "Die",
+  "sentence": "Die Armee verteidigt das Land.",
+  "grammar": "Feminine",
+  "translation": "Army"
+},
+{
+  "noun": "Aufwand",
+  "article": "Der",
+  "sentence": "Der Aufwand für das Projekt war enorm.",
+  "grammar": "Masculine",
+  "translation": "Effort"
+},
+{
+  "noun": "Osten",
+  "article": "Der",
+  "sentence": "Der Osten des Landes ist bekannt für seine Natur.",
+  "grammar": "Masculine",
+  "translation": "East"
+},
+{
+  "noun": "Agent",
+  "article": "Der",
+  "sentence": "Der Agent arbeitet undercover.",
+  "grammar": "Masculine",
+  "translation": "Agent"
+},
+{
+  "noun": "Zukunft",
+  "article": "Die",
+  "sentence": "Die Zukunft ist voller Möglichkeiten.",
+  "grammar": "Feminine",
+  "translation": "Future"
+},
+{
+  "noun": "Hose",
+  "article": "Die",
+  "sentence": "Die Hose passt perfekt.",
+  "grammar": "Feminine",
+  "translation": "Pant"
+},
+{
+  "noun": "Leder",
+  "article": "Das",
+  "sentence": "Das Leder ist von hoher Qualität.",
+  "grammar": "Neuter",
+  "translation": "Leather"
+},
+{
+  "noun": "Flug",
+  "article": "Der",
+  "sentence": "Der Flug dauert drei Stunden.",
+  "grammar": "Masculine",
+  "translation": "Flight"
+},
+{
+  "noun": "Sex",
+  "article": "Der",
+  "sentence": "Der Sex sollte immer einvernehmlich sein.",
+  "grammar": "Masculine",
+  "translation": "Sex"
+},
+{
+  "noun": "Gericht",
+  "article": "Das",
+  "sentence": "Das Gericht entscheidet über den Fall.",
+  "grammar": "Neuter",
+  "translation": "Court"
+},
+{
+  "noun": "Kurs",
+  "article": "Der",
+  "sentence": "Der Kurs beginnt um 10 Uhr.",
+  "grammar": "Masculine",
+  "translation": "Course"
+},
+{
+  "noun": "Schmutz",
+  "article": "Der",
+  "sentence": "Der Schmutz muss weggekehrt werden.",
+  "grammar": "Masculine",
+  "translation": "Dirt"
+},
+{
+  "noun": "Ei",
+  "article": "Das",
+  "sentence": "Das Ei ist frisch vom Bauernhof.",
+  "grammar": "Neuter",
+  "translation": "Egg"
+},
+{
+  "noun": "Kinn",
+  "article": "Das",
+  "sentence": "Das Kinn des Mannes ist markant.",
+  "grammar": "Neuter",
+  "translation": "Chin"
+},
+{
+  "noun": "Fremde",
+  "article": "Der",
+  "sentence": "Der Fremde fragte nach dem Weg.",
+  "grammar": "Masculine",
+  "translation": "Stranger"
+},
+{
+  "noun": "Vergnügen",
+  "article": "Das",
+  "sentence": "Das Vergnügen, neue Dinge zu entdecken, ist groß.",
+  "grammar": "Neuter",
+  "translation": "Pleasure"
+},
+{
+  "noun": "Detail",
+  "article": "Das",
+  "sentence": "Das Detail macht den Unterschied.",
+  "grammar": "Neuter",
+  "translation": "Detail"
+},
+{
+  "noun": "Besatzung",
+  "article": "Die",
+  "sentence": "Die Besatzung des Schiffes ist hoch qualifiziert.",
+  "grammar": "Feminine",
+  "translation": "Crew"
+},
+{
+  "noun": "Herbst",
+  "article": "Der",
+  "sentence": "Der Herbst bringt bunte Blätter.",
+  "grammar": "Masculine",
+  "translation": "Fall"
+}
 
   
-  klar til upload..ER FORKERT, MANGLER article feltet..
+  ovenfor uploaded
 
 
 444. Guest	Der Gast	Die Gäste
@@ -3855,7 +3892,7 @@ OVENFOR UPLOADED
     "translation": "Television"
   }
 
-KLAR TIL UPLOAD..
+ovenfor uploaded
 
   
 
@@ -4165,6 +4202,8 @@ Here is the JSON data for the next set of German nouns:
     "translation": "Sweat"
   },
 
+  OVENFOR UPLOADED
+
 
 522. Accident	Der Unfall	Die Unfälle
 523. Weather	Das Wetter	-
@@ -4340,7 +4379,7 @@ Here is the JSON data for the next set of German nouns:
     "translation": "Neighborhood"
   },
   
-  
+  OVENFOR UPLOADED
 
 543. Energy	Die Energie	-
 544. Green	Das Grün	-
@@ -4635,6 +4674,8 @@ Here is the JSON data for the nouns from 543 to 583:
     "grammar": "Masculine",
     "translation": "Birthday"
   },
+
+  OVENFOR UPLOADED
 
 
 579. Lily	Die Lilie	Die Lilien

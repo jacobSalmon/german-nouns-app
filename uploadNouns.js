@@ -11,281 +11,252 @@ const uri = `mongodb+srv://jacobsalmon:${process.env.MONGODB_PASSWORD}@firstsalm
 const data = [
   
   {
-    "noun": "Winkel",
-    "article": "Der",
-    "sentence": "Der Winkel beträgt 90 Grad.",
-    "grammar": "Masculine",
-    "translation": "Angle"
-  },
-  {
-    "noun": "Form",
+    "noun": "Die Lilie",
     "article": "Die",
-    "sentence": "Die Form des Gebäudes ist modern.",
+    "sentence": "Die Lilien blühen im Frühling in vielen verschiedenen Farben.",
     "grammar": "Feminine",
-    "translation": "Form"
+    "translation": "Lily"
   },
   {
-    "noun": "Ton",
-    "article": "Der",
-    "sentence": "Der Ton der Musik ist melodisch.",
-    "grammar": "Masculine",
-    "translation": "Tone"
-  },
-  {
-    "noun": "Kreis",
-    "article": "Der",
-    "sentence": "Der Kreis hat keinen Anfang und kein Ende.",
-    "grammar": "Masculine",
-    "translation": "Circle"
-  },
-  {
-    "noun": "Frühling",
-    "article": "Der",
-    "sentence": "Der Frühling ist die Jahreszeit der Blüten.",
-    "grammar": "Masculine",
-    "translation": "Spring"
-  },
-  {
-    "noun": "Veranda",
-    "article": "Die",
-    "sentence": "Die Veranda lädt zum Entspannen ein.",
-    "grammar": "Feminine",
-    "translation": "Porch"
-  },
-  {
-    "noun": "Blatt",
+    "noun": "Das Eisen",
     "article": "Das",
-    "sentence": "Das Blatt fällt vom Baum.",
+    "sentence": "Das Eisen wird für den Bau von Brücken und Gebäuden verwendet.",
     "grammar": "Neuter",
-    "translation": "Sheet"
+    "translation": "Iron"
   },
   {
-    "noun": "Mitglied",
+    "noun": "Die Augenbraue",
+    "article": "Die",
+    "sentence": "Die Augenbrauen betonen die Gesichtszüge.",
+    "grammar": "Feminine",
+    "translation": "Eyebrow"
+  },
+  {
+    "noun": "Die Antwort",
+    "article": "Die",
+    "sentence": "Die Antwort auf seine Frage war überraschend.",
+    "grammar": "Feminine",
+    "translation": "Response"
+  },
+  {
+    "noun": "Die Geschwindigkeit",
+    "article": "Die",
+    "sentence": "Die Geschwindigkeit des Zuges beträgt 200 Kilometer pro Stunde.",
+    "grammar": "Feminine",
+    "translation": "Speed"
+  },
+  {
+    "noun": "Der Zweck",
+    "article": "Der",
+    "sentence": "Der Zweck dieser Veranstaltung ist die Förderung des kulturellen Austauschs.",
+    "grammar": "Masculine",
+    "translation": "Purpose"
+  },
+  {
+    "noun": "Der Rock",
+    "article": "Der",
+    "sentence": "Der Rock passt gut zu ihrem eleganten Outfit.",
+    "grammar": "Masculine",
+    "translation": "Skirt"
+  },
+  {
+    "noun": "Das Quadrat",
     "article": "Das",
-    "sentence": "Das Mitglied ist Teil des Teams.",
+    "sentence": "Das Quadrat der Hypotenuse ist gleich der Summe der Quadrate der beiden anderen Seiten.",
     "grammar": "Neuter",
-    "translation": "Member"
+    "translation": "Square"
   },
   {
-    "noun": "Pool",
+    "noun": "Die Fahrt",
+    "article": "Die",
+    "sentence": "Die Fahrt mit der Seilbahn bot einen beeindruckenden Ausblick über die Stadt.",
+    "grammar": "Feminine",
+    "translation": "Drive"
+  },
+  {
+    "noun": "Der Artikel",
     "article": "Der",
-    "sentence": "Der Pool ist mit klarem Wasser gefüllt.",
+    "sentence": "Der Artikel behandelt wichtige Aspekte der aktuellen politischen Lage.",
     "grammar": "Masculine",
-    "translation": "Pool"
+    "translation": "Article"
   },
   {
-    "noun": "Bedürfnis",
+    "noun": "Das Englisch",
     "article": "Das",
-    "sentence": "Das Bedürfnis nach Schlaf ist groß.",
+    "sentence": "Das Englisch ist eine Weltsprache, die von Millionen Menschen gesprochen wird.",
     "grammar": "Neuter",
-    "translation": "Need"
+    "translation": "English"
   },
   {
-    "noun": "Hoffnung",
-    "article": "Die",
-    "sentence": "Die Hoffnung auf eine bessere Zukunft bleibt.",
-    "grammar": "Feminine",
-    "translation": "Hope"
-  },
-  {
-    "noun": "See",
+    "noun": "Der Turm",
     "article": "Der",
-    "sentence": "Der See liegt malerisch zwischen den Bergen.",
+    "sentence": "Der Turm ragt über die Stadtmauern hinaus.",
     "grammar": "Masculine",
-    "translation": "Lake"
+    "translation": "Tower"
   },
   {
-    "noun": "Brust",
+    "noun": "Die Schlacht",
     "article": "Die",
-    "sentence": "Die Brust des Vogels ist rot.",
+    "sentence": "Die Schlacht fand vor vielen Jahrhunderten statt, aber ihre Folgen sind bis heute spürbar.",
     "grammar": "Feminine",
-    "translation": "Breast"
+    "translation": "Battle"
   },
   {
-    "noun": "Überraschung",
-    "article": "Die",
-    "sentence": "Die Überraschung war gelungen.",
-    "grammar": "Feminine",
-    "translation": "Surprise"
+    "noun": "Der Film",
+    "article": "Der",
+    "sentence": "Der Film erzählt die wahre Geschichte einer mutigen Frau.",
+    "grammar": "Masculine",
+    "translation": "Film"
   },
   {
-    "noun": "Interesse",
+    "noun": "Das Rennen",
     "article": "Das",
-    "sentence": "Das Interesse an der Kunst ist groß.",
+    "sentence": "Das Rennen um den Titel des Champions war hart umkämpft.",
     "grammar": "Neuter",
-    "translation": "Interest"
+    "translation": "Race"
   },
   {
-    "noun": "Boden",
+    "noun": "Der Schock",
     "article": "Der",
-    "sentence": "Der Boden ist mit Teppich bedeckt.",
+    "sentence": "Der Schock über die Nachricht saß tief.",
     "grammar": "Masculine",
-    "translation": "Bottom"
+    "translation": "Shock"
   },
   {
-    "noun": "Geist",
-    "article": "Der",
-    "sentence": "Der Geist ist ein faszinierendes Konzept.",
-    "grammar": "Masculine",
-    "translation": "Spirit"
-  },
-  {
-    "noun": "Block",
-    "article": "Der",
-    "sentence": "Der Block ist aus Beton.",
-    "grammar": "Masculine",
-    "translation": "Block"
-  },
-  {
-    "noun": "Sprache",
+    "noun": "Die Sektion",
     "article": "Die",
-    "sentence": "Die Sprache ist ein Mittel der Kommunikation.",
+    "sentence": "Die Sektion des Berichts enthält detaillierte Analysen.",
     "grammar": "Feminine",
-    "translation": "Language"
+    "translation": "Section"
   },
   {
-    "noun": "Brücke",
+    "noun": "Die Art",
     "article": "Die",
-    "sentence": "Die Brücke verbindet beide Ufer.",
+    "sentence": "Die Art und Weise, wie er sprach, beeindruckte alle Anwesenden.",
     "grammar": "Feminine",
-    "translation": "Bridge"
+    "translation": "Manner"
   },
   {
-    "noun": "Staub",
-    "article": "Der",
-    "sentence": "Der Staub liegt auf den Regalen.",
-    "grammar": "Masculine",
-    "translation": "Dust"
-  },
-  {
-    "noun": "Zelle",
-    "article": "Die",
-    "sentence": "Die Zelle ist die kleinste Einheit des Lebens.",
-    "grammar": "Feminine",
-    "translation": "Cell"
-  },
-  {
-    "noun": "Wein",
-    "article": "Der",
-    "sentence": "Der Wein schmeckt köstlich.",
-    "grammar": "Masculine",
-    "translation": "Wine"
-  },
-  {
-    "noun": "Stiefel",
-    "article": "Der",
-    "sentence": "Der Stiefel ist wasserdicht.",
-    "grammar": "Masculine",
-    "translation": "Boot"
-  },
-  {
-    "noun": "Wahl",
-    "article": "Die",
-    "sentence": "Die Wahl der Farben ist wichtig für das Design.",
-    "grammar": "Feminine",
-    "translation": "Choice"
-  },
-  {
-    "noun": "Reihe",
-    "article": "Die",
-    "sentence": "Die Reihe der Bücher ist alphabetisch geordnet.",
-    "grammar": "Feminine",
-    "translation": "Row"
-  },
-  {
-    "noun": "Gespräch",
+    "noun": "Das Schwert",
     "article": "Das",
-    "sentence": "Das Gespräch war interessant und informativ.",
+    "sentence": "Das Schwert war eine der wichtigsten Waffen im Mittelalter.",
     "grammar": "Neuter",
-    "translation": "Talk"
+    "translation": "Sword"
   },
   {
-    "noun": "Flugzeug",
+    "noun": "Der Stock",
+    "article": "Der",
+    "sentence": "Der Stock half ihm beim Gehen auf unebenem Gelände.",
+    "grammar": "Masculine",
+    "translation": "Stick"
+  },
+  {
+    "noun": "Die Datei",
+    "article": "Die",
+    "sentence": "Die Datei wurde erfolgreich auf dem Server gespeichert.",
+    "grammar": "Feminine",
+    "translation": "File"
+  },
+  {
+    "noun": "Das Brot",
     "article": "Das",
-    "sentence": "Das Flugzeug fliegt über den Ozean.",
+    "sentence": "Das Brot duftete verführerisch frisch aus dem Ofen.",
     "grammar": "Neuter",
-    "translation": "Plane"
+    "translation": "Bread"
   },
   {
-    "noun": "Uhr",
+    "noun": "Das Öl",
+    "article": "Das",
+    "sentence": "Das Öl wurde für die Zubereitung des Essens verwendet.",
+    "grammar": "Neuter",
+    "translation": "Oil"
+  },
+  {
+    "noun": "Die Kette",
     "article": "Die",
-    "sentence": "Die Uhr zeigt fünf Minuten vor zwölf.",
+    "sentence": "Die Kette wurde sorgfältig um den Hals gelegt.",
     "grammar": "Feminine",
-    "translation": "Watch"
+    "translation": "Chain"
   },
   {
-    "noun": "Information",
+    "noun": "Die Abteilung",
     "article": "Die",
-    "sentence": "Die Information ist auf der Website verfügbar.",
+    "sentence": "Die Abteilung für Marketing organisiert die Werbekampagnen des Unternehmens.",
     "grammar": "Feminine",
-    "translation": "Information"
+    "translation": "Department"
   },
   {
-    "noun": "Großmutter",
+    "noun": "Das Projekt",
+    "article": "Das",
+    "sentence": "Das Projekt wird voraussichtlich in zwei Jahren abgeschlossen sein.",
+    "grammar": "Neuter",
+    "translation": "Project"
+  },
+  {
+    "noun": "Der Mord",
+    "article": "Der",
+    "sentence": "Der Mord an dem Politiker schockierte die ganze Nation.",
+    "grammar": "Masculine",
+    "translation": "Murder"
+  },
+  {
+    "noun": "Der Bär",
+    "article": "Der",
+    "sentence": "Der Bär wurde in freier Wildbahn gesichtet.",
+    "grammar": "Masculine",
+    "translation": "Bear"
+  },
+  {
+    "noun": "Der Test",
+    "article": "Der",
+    "sentence": "Der Test besteht aus mehreren Aufgaben unterschiedlicher Schwierigkeitsgrade.",
+    "grammar": "Masculine",
+    "translation": "Test"
+  },
+  {
+    "noun": "Der Besuch",
+    "article": "Der",
+    "sentence": "Der Besuch ihrer Eltern war eine angenehme Überraschung.",
+    "grammar": "Masculine",
+    "translation": "Visit"
+  },
+  {
+    "noun": "Die Milch",
     "article": "Die",
-    "sentence": "Die Großmutter backt gerne Kuchen.",
+    "sentence": "Die Milch ist eine wichtige Quelle für Kalzium.",
     "grammar": "Feminine",
-    "translation": "Grandmother"
+    "translation": "Milk"
   },
   {
-    "noun": "Flügel",
+    "noun": "Der Chef",
     "article": "Der",
-    "sentence": "Der Flügel des Vogels ist beeindruckend.",
+    "sentence": "Der Chef war mit den Ergebnissen der letzten Quartalszahlen zufrieden.",
     "grammar": "Masculine",
-    "translation": "Wing"
+    "translation": "Boss"
   },
   {
-    "noun": "Bob",
+    "noun": "Der Ellenbogen",
     "article": "Der",
-    "sentence": "Der Bob ist eine beliebte Frisur.",
+    "sentence": "Der Ellenbogen schmerzte nach dem Sturz.",
     "grammar": "Masculine",
-    "translation": "Bob"
+    "translation": "Elbow"
   },
   {
-    "noun": "Club",
+    "noun": "Das Verlangen",
+    "article": "Das",
+    "sentence": "Das Verlangen nach Anerkennung trieb ihn an.",
+    "grammar": "Neuter",
+    "translation": "Desire"
+  },
+  {
+    "noun": "Der Patient",
     "article": "Der",
-    "sentence": "Der Club ist nur für Mitglieder zugänglich.",
+    "sentence": "Der Patient wartete geduldig auf seinen Arzttermin.",
     "grammar": "Masculine",
-    "translation": "Club"
-  },
-  {
-    "noun": "Meister",
-    "article": "Der",
-    "sentence": "Der Meister des Spiels wurde gefeiert.",
-    "grammar": "Masculine",
-    "translation": "Master"
-  },
-  {
-    "noun": "Gnade",
-    "article": "Die",
-    "sentence": "Die Gnade Gottes ist unendlich.",
-    "grammar": "Feminine",
-    "translation": "Grace"
-  },
-  {
-    "noun": "Wald",
-    "article": "Der",
-    "sentence": "Der Wald ist voller Bäume und Tiere.",
-    "grammar": "Masculine",
-    "translation": "Forest"
-  },
-  {
-    "noun": "Größe",
-    "article": "Die",
-    "sentence": "Die Größe des Raumes beeindruckt.",
-    "grammar": "Feminine",
-    "translation": "Size"
-  },
-  {
-    "noun": "Satz",
-    "article": "Der",
-    "sentence": "Der Satz enthält ein Subjekt und ein Prädikat.",
-    "grammar": "Masculine",
-    "translation": "Set"
+    "translation": "Patient"
   }
 
-  
-  ];
+];
 
 // Create a MongoClient with a MongoClientOptions object to set the Stable API version
 const client = new MongoClient(uri, {
@@ -297,14 +268,35 @@ const client = new MongoClient(uri, {
 });
 
 async function uploadNouns() {
+  let attemptedUploads = 0;
+  let successfulUploads = 0;
+  let duplicateCount = 0;
+
   try {
     // Connect the client to the server
     await client.connect();
     console.log("Connected to MongoDB!");
 
-    // Upload the data
-    const result = await client.db("German").collection("german_nouns").insertMany(data);
-    console.log(`Inserted ${result.insertedCount} nouns into the database.`);
+    const collection = client.db("German").collection("german_nouns");
+
+    for (const newNoun of data) {
+      attemptedUploads++;
+      const existingNoun = await collection.findOne({ noun: newNoun.noun });
+
+      if (existingNoun) {
+        duplicateCount++;
+        console.log(`Duplicate found: ${newNoun.noun}`);
+      } else {
+        await collection.insertOne(newNoun);
+        successfulUploads++;
+        console.log(`Inserted: ${newNoun.noun}`);
+      }
+    }
+
+    console.log(`Attempted uploads: ${attemptedUploads}`);
+    console.log(`Successful uploads: ${successfulUploads}`);
+    console.log(`Duplicates not uploaded: ${duplicateCount}`);
+
   } catch (e) {
     console.error('Error uploading nouns:', e);
   } finally {
@@ -316,6 +308,3 @@ async function uploadNouns() {
 
 // Run the function
 uploadNouns().catch(console.dir);
-
-
-
