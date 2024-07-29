@@ -11,7 +11,6 @@ import { dirname } from 'path';
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = dirname(__filename);
 
-
 // Load environment variables from a .env file
 dotenv.config();
 
@@ -20,10 +19,11 @@ const port = 3001;
 
 // Serve static files from the 'public' directory
 app.use(express.static('public'));
+app.use(express.static(path.join(__dirname)));
+
 app.use(bodyparser.json());
 
-
-const rootDir = path.resolve(__dirname); 
+const rootDir = path.resolve(__dirname);
 
 app.get('/', (req, res) => {
   res.sendFile(path.join(rootDir, 'public', 'index.html'));
@@ -33,7 +33,9 @@ app.get('/add-noun', (req, res) => {
   res.sendFile(path.join(rootDir, 'public', 'add-noun.html'));
 });
 
-
+app.get('/verbs', (req, res) => {
+  res.sendFile(path.join(rootDir, 'public', 'verbs.html'));
+});
 
 // Endpoint to get a random noun
 app.get('/random-noun', async (req, res) => {
@@ -46,8 +48,8 @@ app.get('/random-noun', async (req, res) => {
 });
 
 app.post('/create-noun', async (req, res) => {
-    console.log('Received POST request to /create-noun');
-    console.log('Request body:', req.body);
+  console.log('Received POST request to /create-noun');
+  console.log('Request body:', req.body);
   try {
     const newNoun = req.body;
     await createNoun(client, newNoun);
@@ -55,16 +57,10 @@ app.post('/create-noun', async (req, res) => {
   } catch (e) {
     console.error('Error creating noun:', e);
     res.status(500).send(`Error creating noun: ${e.message}`);
-    //res.status(500).send('Error creating noun');
   }
 });
 
-app.listen(port, () => {
-  console.log(`Example app listening at http://localhost:${port}`);
-});
-
-
-// Endpoint to search for a  noun on admin page
+// Endpoint to search for a noun on admin page
 app.get('/search-noun', async (req, res) => {
   const noun = req.query.noun;
   try {
@@ -84,15 +80,37 @@ app.get('/admin', (req, res) => {
   res.sendFile(path.join(rootDir, 'public', 'admin.html'));
 });
 
+// Endpoint to get a random verb
+app.get('/random-verb', async (req, res) => {
+  try {
+    console.log("Received request for /random-verb");
+    await client.connect();
+    console.log("Connected to MongoDB for /random-verb");
+    const verbsCollection = client.db("German").collection("german_verbs");
+    const count = await verbsCollection.countDocuments();
+    console.log(`Total verbs count: ${count}`);
+    const randomIndex = Math.floor(Math.random() * count);
+    console.log(`Random index: ${randomIndex}`);
+    const randomVerb = await verbsCollection.find().limit(1).skip(randomIndex).toArray();
+    console.log("Fetched random verb:", randomVerb[0]);
+    res.json(randomVerb[0]);
+  } catch (e) {
+    console.error('Error fetching random verb:', e);
+    res.status(500).send('Error fetching random verb');
+  } finally {
+    await client.close();
+    console.log("Closed MongoDB connection for /random-verb");
+  }
+});
 
 
+app.listen(port, () => {
+  console.log(`Example app listening at http://localhost:${port}`);
+});
 
-
-// *******************  MONGODB   *******************
-
+// MongoDB connection
 const uri = `mongodb+srv://jacobsalmon:${process.env.MONGODB_PASSWORD}@firstsalmoncluster.711lsnh.mongodb.net/?retryWrites=true&w=majority&appName=FirstSalmonCluster`;
 
-// Create a MongoClient with a MongoClientOptions object to set the Stable API version
 const client = new MongoClient(uri, {
   serverApi: {
     version: ServerApiVersion.v1,
@@ -101,67 +119,12 @@ const client = new MongoClient(uri, {
   }
 });
 
-async function run() {
-  try {
-    // Connect the client to the server (optional starting in v4.7)
-    await client.connect();
-    // Send a ping to confirm a successful connection
-    await client.db("admin").command({ ping: 1 });
-    console.log("Pinged your deployment. You successfully connected to MongoDB!");
-
- 
-    // Create a new noun: THE ACTUAL DATA NEED TO BE VARIABLES OBVIOUSLY, this is just a test.
-    
-    /*
-    const newNoun = { 
-      noun: "Haus", 
-      artikel: "Das",
-      sentence: "Das Haus ist groß",
-      grammar: "Noun",
-      translation: "House"
-    };
-    
-    await createNoun(client, newNoun);
-
-
-    // List the databases available:
-     await listDatabases(client);
-
-    // List the nouns in the database:
-    
-    await getNouns().then(nouns => {
-      console.log("Nouns:");
-      nouns.forEach(noun => console.log(noun));
-    }
-    );
-   
-
-    // Get a random noun from the database:
-    await getRandomNoun().then(noun => {
-      console.log("Random noun:");
-      console.log(noun);
-    });
- */
-
-
-  } catch (e) {
-    console.error(e);
-
-  } finally {
-    // Ensures that the client will close when you finish/error
-    await client.close();
-  }
-}
-
-run().catch(console.dir);
-
-// save new noun in the database
 async function createNoun(client, newNoun) {
   try {
     const result = await client.db("German").collection("german_nouns").insertOne(newNoun);
     console.log(`New noun created with the following id: ${result.insertedId}`);
   } catch (e) {
-    console.error('Error inserting noun into the database:', e); // Log the detailed error
+    console.error('Error inserting noun into the database:', e);
     throw e;
   }
 }
@@ -175,7 +138,6 @@ async function listDatabases(client) {
 async function getNouns() {
   await client.connect();
   const nouns = await client.db("German").collection("german_nouns").find({}).toArray();
-  //await client.close();
   return nouns;
 }
 
@@ -185,7 +147,6 @@ async function getRandomNoun() {
   const count = await client.db("German").collection("german_nouns").countDocuments();
   const randomIndex = Math.floor(Math.random() * count);
   const randomNoun = await client.db("German").collection("german_nouns").find().limit(1).skip(randomIndex).toArray();
- // await client.close();
   return randomNoun[0];
 }
 
@@ -195,14 +156,3 @@ async function searchNoun(client, noun) {
   const result = await client.db("German").collection("german_nouns").findOne({ noun: noun });
   return result;
 }
-
-
-
-
-
-// *******************  END OF MONGODB *******************
-
-
-// *******************  FRONTEND INTERACTION   *******************
-
-
