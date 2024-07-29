@@ -15,7 +15,7 @@ h1 {
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    height: calc(100vh - 60px); /* Adjust height to account for the button */
+    height: 100vh;
 }
 
 .card {
@@ -34,36 +34,18 @@ button {
     margin: 10px;
     font-size: 16px;
     cursor: pointer;
+    border: none;
+    border-radius: 5px;
+    transition: background-color 0.3s;
+}
+
+.article-button {
     background-color: #007bff;
     color: #fff;
-    border: none;
-    border-radius: 5px;
-    transition: background-color 0.3s;
 }
 
-button:hover {
-    background-color: #0056b3;
-}
-
-.admin-button-container {
-    display: flex;
-    justify-content: center;
-    margin-top: 20px;
-}
-
-.admin-button {
-    background-color: #d6d6d6; /* Lighter gray color */
-    color: #333;
-    padding: 8px 16px;
-    font-size: 14px;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-    transition: background-color 0.3s;
-}
-
-.admin-button:hover {
-    background-color: #c0c0c0; /* Slightly darker gray */
+.article-button:hover {
+    background-color: #0056b3; /* Mørkeblå farve ved hover */
 }
 
 #noun-display {
@@ -105,5 +87,27 @@ button:hover {
 }
 
 #next-noun:hover {
-    background-color: #0056b3;
+    background-color: #0056b3; /* Mørkeblå farve ved hover */
+}
+
+.nav-buttons {
+    display: flex;
+    justify-content: center;
+    margin-top: 175px;
+}
+
+.nav-button {
+    background-color: #f0f0f0;
+    color: #333;
+    padding: 10px 20px;
+    margin: 10px;
+    font-size: 16px;
+    cursor: pointer;
+    border: none;
+    border-radius: 5px;
+    transition: background-color 0.3s;
+}
+
+.nav-button:hover {
+    background-color: #b4d1e4; /* Mørkegrå farve ved hover */
 }
