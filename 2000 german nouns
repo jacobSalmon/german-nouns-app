@@ -4717,6 +4717,8 @@ Here is the JSON data for the nouns from 543 to 583:
 
 Here is the JSON data for the nouns from 579 to 625:
 
+SKAL RETTES, ARTIKEL SKAL FJERNES FRA NOUN FELT FØR UPLOAD!!
+
 ```json
 [
   {
@@ -5004,6 +5006,8 @@ Here is the JSON data for the nouns from 579 to 625:
 649. Trunk	Der Stamm	Die Stämme
 650. Cry	Das Weinen	Die Weinen
 
+UVENFOR RETTET OG UPLOADED
+
 Here is the JSON data for the nouns from 615 to 660:
 
 ```json
@@ -5260,6 +5264,8 @@ Here is the JSON data for the nouns from 615 to 660:
     "grammar": "Neuter",
     "translation": "Cry"
   },
+
+
 
 
 651. Program	Das Programm	Die Programme
