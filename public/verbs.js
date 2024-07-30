@@ -61,7 +61,7 @@ function displayVerb(verb) {
       </tbody>
     </table>
   `;
-  showConjugation();
+  //showConjugation();
 }
 
 function showConjugation() {
