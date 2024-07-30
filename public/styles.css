@@ -101,3 +101,92 @@ button#next-verb:hover, button[onclick*="/"]:hover {
 #next-noun:hover, #next-verb:hover {
     background-color: #0056b3;
 }
+
+
+/* Rest of your CSS */
+
+#verb-display {
+    margin-top: 20px;
+    font-size: 18px;
+    color: #333;
+    text-align: center;
+  }
+  
+  #conjugation-display {
+    margin-top: 20px;
+    font-size: 18px;
+    color: #333;
+    text-align: center;
+  }
+  
+  #conjugation-display table {
+    width: 100%;
+    border-collapse: collapse;
+  }
+  
+  #conjugation-display th, #conjugation-display td {
+    border: 1px solid #ddd;
+    padding: 8px;
+  }
+  
+  #conjugation-display th {
+    background-color: #f2f2f2;
+    text-align: center;
+  }
+  
+  #conjugation-display td {
+    text-align: center;
+  }
+  
+  button {
+    display: inline-block;
+    padding: 10px 20px;
+    margin: 10px;
+    font-size: 16px;
+    cursor: pointer;
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    transition: background-color 0.3s;
+  }
+  
+  button:hover {
+    background-color: #0056b3;
+  }
+  
+  #next-verb {
+    display: inline-block;
+    padding: 10px 20px;
+    margin: 20px auto 0;
+    font-size: 16px;
+    cursor: pointer;
+    background-color: #007bff;;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    transition: background-color 0.3s;
+    text-align: center;
+  }
+  
+  #next-verb:hover {
+    background-color: #0056b3;;
+  }
+  
+
+  #next-conjugation, #next-verb {
+    display: block;
+    margin: 10px auto;
+    padding: 10px 20px;
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+  }
+  
+  #next-conjugation:hover, #next-verb:hover {
+    background-color: #0056b3;
+  }
+  
