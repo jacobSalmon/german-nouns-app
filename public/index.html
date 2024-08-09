@@ -9,6 +9,11 @@
 <body>
   <div class="container">
     <div class="card">
+
+      <div id="score-display">
+        <h3>Today's Score: <span id="score-percentage">0%</span></h3>
+      </div>
+
       <h1>German Nouns Quiz</h1>
       <div id="noun-display"></div>
       <div id="quiz-buttons">
@@ -27,6 +32,34 @@
 
   <script>
     let currentNoun = null;
+
+    // Håndtering af Score
+function resetScoreIfNeeded() {
+  const lastPlayedDate = localStorage.getItem('lastPlayedDate');
+  const today = new Date().toISOString().split('T')[0]; // Kun datoen, ingen tid
+
+  if (lastPlayedDate !== today) {
+    correctAnswers = 0;
+    totalAnswers = 0;
+    localStorage.setItem('lastPlayedDate', today);
+    localStorage.setItem('correctAnswers', 0);
+    localStorage.setItem('totalAnswers', 0);
+  } else {
+    correctAnswers = parseInt(localStorage.getItem('correctAnswers')) || 0;
+    totalAnswers = parseInt(localStorage.getItem('totalAnswers')) || 0;
+  }
+
+  updateScoreDisplay();
+}
+
+function updateScoreDisplay() {
+  const percentage = totalAnswers > 0 ? Math.round((correctAnswers / totalAnswers) * 100) : 0;
+  document.getElementById('score-percentage').innerText = `${percentage}%`;
+
+  // Gem scorene i localStorage
+  localStorage.setItem('correctAnswers', correctAnswers);
+  localStorage.setItem('totalAnswers', totalAnswers);
+}
 
     async function fetchRandomNoun() {
       try {
@@ -52,27 +85,35 @@
     }
 
     function checkAnswer(selectedArticle) {
-      const buttons = document.querySelectorAll('.article-button');
-      buttons.forEach(button => {
-        button.disabled = true;
-        if (button.getAttribute('data-article') === currentNoun.article) {
-          button.style.backgroundColor = 'green'; // Correct answer
-        } else if (button.getAttribute('data-article') === selectedArticle) {
-          button.style.backgroundColor = 'darkred'; // Incorrect answer
-        } else {
-          button.style.backgroundColor = 'grey'; // Other buttons
-        }
-      });
-
-      document.getElementById('result-display').innerHTML = `
-        <p><strong>Article:</strong> ${currentNoun.article}</p>
-        <p><strong>Sentence:</strong> ${currentNoun.sentence}</p>
-        <p><strong>Grammar:</strong> ${currentNoun.grammar}</p>
-        <p><strong>Translation:</strong> ${currentNoun.translation}</p>
-      `;
-
-      document.getElementById('next-noun').style.display = 'block';
+  const buttons = document.querySelectorAll('.article-button');
+  buttons.forEach(button => {
+    button.disabled = true;
+    if (button.getAttribute('data-article') === currentNoun.article) {
+      button.style.backgroundColor = 'green'; // Correct answer
+    } else if (button.getAttribute('data-article') === selectedArticle) {
+      button.style.backgroundColor = 'darkred'; // Incorrect answer
+    } else {
+      button.style.backgroundColor = 'grey'; // Other buttons
     }
+  });
+
+  document.getElementById('result-display').innerHTML = `
+    <p><strong>Article:</strong> ${currentNoun.article}</p>
+    <p><strong>Sentence:</strong> ${currentNoun.sentence}</p>
+    <p><strong>Grammar:</strong> ${currentNoun.grammar}</p>
+    <p><strong>Translation:</strong> ${currentNoun.translation}</p>
+  `;
+
+  document.getElementById('next-noun').style.display = 'block';
+
+  // Update score
+  totalAnswers++;
+  if (selectedArticle === currentNoun.article) {
+    correctAnswers++;
+  }
+  updateScoreDisplay();
+}
+
 
     document.querySelectorAll('.article-button').forEach(button => {
       button.addEventListener('click', () => {
@@ -83,7 +124,15 @@
 
     document.getElementById('next-noun').addEventListener('click', fetchRandomNoun);
 
-    window.onload = fetchRandomNoun;
+    //window.onload = fetchRandomNoun;
+
+    window.onload = function() {
+    resetScoreIfNeeded();
+    fetchRandomNoun();
+    };
+
+
+
   </script>
 </body>
 </html>
