@@ -9,181 +9,61 @@ const uri = `mongodb+srv://jacobsalmon:${process.env.MONGODB_PASSWORD}@firstsalm
 
 // JSON data
 const verbs = [
- 
+
     {
-        "verb": "Schwimmen",
-        "meaning": "To swim",
-        "example": "Er schwimmt jeden Morgen im See.",
+        "verb": "Füttern",
+        "meaning": "To feed",
+        "example": "Sie füttert die Katze.",
         "conjugation": {
-            "Present": ["schwimme", "schwimmst", "schwimmt", "schwimmen", "schwimmt", "schwimmen"],
-            "Simple Past": ["schwamm", "schwammst", "schwamm", "schwammen", "schwammt", "schwammen"],
-            "Present Perfect": ["bin geschwommen", "bist geschwommen", "ist geschwommen", "sind geschwommen", "seid geschwommen", "sind geschwommen"]
+            "Present": ["füttere", "fütterst", "füttert", "füttern", "füttert", "füttern"],
+            "Simple Past": ["fütterte", "füttertest", "fütterte", "fütterten", "füttertet", "fütterten"],
+            "Present Perfect": ["habe gefüttert", "hast gefüttert", "hat gefüttert", "haben gefüttert", "habt gefüttert", "haben gefüttert"]
         }
     },
     {
-        "verb": "Springen",
-        "meaning": "To jump",
-        "example": "Das Kind springt über den Zaun.",
+        "verb": "Riechen",
+        "meaning": "To smell",
+        "example": "Er riecht die Blumen.",
         "conjugation": {
-            "Present": ["springe", "springst", "springt", "springen", "springt", "springen"],
-            "Simple Past": ["sprang", "sprangst", "sprang", "sprangen", "sprangt", "sprangen"],
-            "Present Perfect": ["bin gesprungen", "bist gesprungen", "ist gesprungen", "sind gesprungen", "seid gesprungen", "sind gesprungen"]
+            "Present": ["rieche", "riechst", "riecht", "riechen", "riecht", "riechen"],
+            "Simple Past": ["roch", "rochst", "roch", "rochen", "rocht", "rochen"],
+            "Present Perfect": ["habe gerochen", "hast gerochen", "hat gerochen", "haben gerochen", "habt gerochen", "haben gerochen"]
         }
     },
     {
-        "verb": "Rennen",
-        "meaning": "To run",
-        "example": "Er rennt sehr schnell.",
+        "verb": "Schmecken",
+        "meaning": "To taste",
+        "example": "Die Suppe schmeckt gut.",
         "conjugation": {
-            "Present": ["renne", "rennst", "rennt", "rennen", "rennt", "rennen"],
-            "Simple Past": ["rannte", "ranntest", "rannte", "rannten", "ranntet", "rannten"],
-            "Present Perfect": ["bin gerannt", "bist gerannt", "ist gerannt", "sind gerannt", "seid gerannt", "sind gerannt"]
+            "Present": ["schmecke", "schmeckst", "schmeckt", "schmecken", "schmeckt", "schmecken"],
+            "Simple Past": ["schmeckte", "schmecktest", "schmeckte", "schmeckten", "schmecktet", "schmeckten"],
+            "Present Perfect": ["habe geschmeckt", "hast geschmeckt", "hat geschmeckt", "haben geschmeckt", "habt geschmeckt", "haben geschmeckt"]
         }
     },
     {
-        "verb": "Flüstern",
-        "meaning": "To whisper",
-        "example": "Sie flüstert ihm ein Geheimnis ins Ohr.",
+        "verb": "Lächeln",
+        "meaning": "To smile",
+        "example": "Sie lächelt freundlich.",
         "conjugation": {
-            "Present": ["flüstere", "flüsterst", "flüstert", "flüstern", "flüstert", "flüstern"],
-            "Simple Past": ["flüsterte", "flüstertest", "flüsterte", "flüsterten", "flüstertet", "flüsterten"],
-            "Present Perfect": ["habe geflüstert", "hast geflüstert", "hat geflüstert", "haben geflüstert", "habt geflüstert", "haben geflüstert"]
+            "Present": ["lächle", "lächelst", "lächelt", "lächeln", "lächelt", "lächeln"],
+            "Simple Past": ["lächelte", "lächeltest", "lächelte", "lächelten", "lächeltet", "lächelten"],
+            "Present Perfect": ["habe gelächelt", "hast gelächelt", "hat gelächelt", "haben gelächelt", "habt gelächelt", "haben gelächelt"]
         }
     },
     {
-        "verb": "Klettern",
-        "meaning": "To climb",
-        "example": "Er klettert auf den Baum.",
+        "verb": "Weinen",
+        "meaning": "To cry",
+        "example": "Das Kind weint.",
         "conjugation": {
-            "Present": ["klettere", "kletterst", "klettert", "klettern", "klettert", "klettern"],
-            "Simple Past": ["kletterte", "klettertest", "kletterte", "kletterten", "klettertet", "kletterten"],
-            "Present Perfect": ["bin geklettert", "bist geklettert", "ist geklettert", "sind geklettert", "seid geklettert", "sind geklettert"]
-        }
-    },
-    {
-        "verb": "Schreiben",
-        "meaning": "To write",
-        "example": "Ich schreibe einen Brief.",
-        "conjugation": {
-            "Present": ["schreibe", "schreibst", "schreibt", "schreiben", "schreibt", "schreiben"],
-            "Simple Past": ["schrieb", "schriebst", "schrieb", "schrieben", "schriebt", "schrieben"],
-            "Present Perfect": ["habe geschrieben", "hast geschrieben", "hat geschrieben", "haben geschrieben", "habt geschrieben", "haben geschrieben"]
-        }
-    },
-    {
-        "verb": "Zeichnen",
-        "meaning": "To draw",
-        "example": "Sie zeichnet ein Bild.",
-        "conjugation": {
-            "Present": ["zeichne", "zeichnest", "zeichnet", "zeichnen", "zeichnet", "zeichnen"],
-            "Simple Past": ["zeichnete", "zeichnetest", "zeichnete", "zeichneten", "zeichnetet", "zeichneten"],
-            "Present Perfect": ["habe gezeichnet", "hast gezeichnet", "hat gezeichnet", "haben gezeichnet", "habt gezeichnet", "haben gezeichnet"]
-        }
-    },
-    {
-        "verb": "Sitzen",
-        "meaning": "To sit",
-        "example": "Er sitzt auf dem Stuhl.",
-        "conjugation": {
-            "Present": ["sitze", "sitzt", "sitzt", "sitzen", "sitzt", "sitzen"],
-            "Simple Past": ["saß", "saßest", "saß", "saßen", "saßet", "saßen"],
-            "Present Perfect": ["habe gesessen", "hast gesessen", "hat gesessen", "haben gesessen", "habt gesessen", "haben gesessen"]
-        }
-    },
-    {
-        "verb": "Stehen",
-        "meaning": "To stand",
-        "example": "Er steht auf der Straße.",
-        "conjugation": {
-            "Present": ["stehe", "stehst", "steht", "stehen", "steht", "stehen"],
-            "Simple Past": ["stand", "standest", "stand", "standen", "standet", "standen"],
-            "Present Perfect": ["habe gestanden", "hast gestanden", "hat gestanden", "haben gestanden", "habt gestanden", "haben gestanden"]
-        }
-    },
-    {
-        "verb": "Lügen",
-        "meaning": "To lie",
-        "example": "Er lügt oft.",
-        "conjugation": {
-            "Present": ["lüge", "lügst", "lügt", "lügen", "lügt", "lügen"],
-            "Simple Past": ["log", "logst", "log", "logen", "logt", "logen"],
-            "Present Perfect": ["habe gelogen", "hast gelogen", "hat gelogen", "haben gelogen", "habt gelogen", "haben gelogen"]
-        }
-    },
-    {
-        "verb": "Kaufen",
-        "meaning": "To buy",
-        "example": "Kaufst du das Kleid?",
-        "conjugation": {
-            "Present": ["kaufe", "kaufst", "kauft", "kaufen", "kauft", "kaufen"],
-            "Simple Past": ["kaufte", "kauftest", "kaufte", "kauften", "kauftet", "kauften"],
-            "Present Perfect": ["habe gekauft", "hast gekauft", "hat gekauft", "haben gekauft", "habt gekauft", "haben gekauft"]
-        }
-    },
-    {
-        "verb": "Wünschen",
-        "meaning": "To wish",
-        "example": "Ich wünsche dir alles Gute.",
-        "conjugation": {
-            "Present": ["wünsche", "wünschst", "wünscht", "wünschen", "wünscht", "wünschen"],
-            "Simple Past": ["wünschte", "wünschtest", "wünschte", "wünschten", "wünschtet", "wünschten"],
-            "Present Perfect": ["habe gewünscht", "hast gewünscht", "hat gewünscht", "haben gewünscht", "habt gewünscht", "haben gewünscht"]
-        }
-    },
-    {
-        "verb": "Lachen",
-        "meaning": "To laugh",
-        "example": "Er lacht über den Witz.",
-        "conjugation": {
-            "Present": ["lache", "lachst", "lacht", "lachen", "lacht", "lachen"],
-            "Simple Past": ["lachte", "lachtest", "lachte", "lachten", "lachtet", "lachten"],
-            "Present Perfect": ["habe gelacht", "hast gelacht", "hat gelacht", "haben gelacht", "habt gelacht", "haben gelacht"]
-        }
-    },
-    {
-        "verb": "Schauen",
-        "meaning": "To look/watch",
-        "example": "Er schaut den Film an.",
-        "conjugation": {
-            "Present": ["schaue", "schaust", "schaut", "schauen", "schaut", "schauen"],
-            "Simple Past": ["schaute", "schautest", "schaute", "schauten", "schautet", "schauten"],
-            "Present Perfect": ["habe geschaut", "hast geschaut", "hat geschaut", "haben geschaut", "habt geschaut", "haben geschaut"]
-        }
-    },
-    {
-        "verb": "Reisen",
-        "meaning": "To travel",
-        "example": "Sie reisen nach Frankreich.",
-        "conjugation": {
-            "Present": ["reise", "reist", "reist", "reisen", "reist", "reisen"],
-            "Simple Past": ["reiste", "reistest", "reiste", "reisten", "reistet", "reisten"],
-            "Present Perfect": ["bin gereist", "bist gereist", "ist gereist", "sind gereist", "seid gereist", "sind gereist"]
-        }
-    },
-    {
-        "verb": "Arbeiten",
-        "meaning": "To work",
-        "example": "Er arbeitet hart.",
-        "conjugation": {
-            "Present": ["arbeite", "arbeitest", "arbeitet", "arbeiten", "arbeitet", "arbeiten"],
-            "Simple Past": ["arbeitete", "arbeitetest", "arbeitete", "arbeiteten", "arbeitetet", "arbeiteten"],
-            "Present Perfect": ["habe gearbeitet", "hast gearbeitet", "hat gearbeitet", "haben gearbeitet", "habt gearbeitet", "haben gearbeitet"]
-        }
-    },
-    {
-        "verb": "Hoffen",
-        "meaning": "To hope",
-        "example": "Ich hoffe auf gutes Wetter.",
-        "conjugation": {
-            "Present": ["hoffe", "hoffst", "hofft", "hoffen", "hofft", "hoffen"],
-            "Simple Past": ["hoffte", "hofftest", "hoffte", "hofften", "hofftet", "hofften"],
-            "Present Perfect": ["habe gehofft", "hast gehofft", "hat gehofft", "haben gehofft", "habt gehofft", "haben gehofft"]
+            "Present": ["weine", "weinst", "weint", "weinen", "weint", "weinen"],
+            "Simple Past": ["weinte", "weintest", "weinte", "weinten", "weintet", "weinten"],
+            "Present Perfect": ["habe geweint", "hast geweint", "hat geweint", "haben geweint", "habt geweint", "haben geweint"]
         }
     },
     {
         "verb": "Zeigen",
         "meaning": "To show",
-        "example": "Zeigst du mir dein neues Auto?",
+        "example": "Er zeigt den Weg.",
         "conjugation": {
             "Present": ["zeige", "zeigst", "zeigt", "zeigen", "zeigt", "zeigen"],
             "Simple Past": ["zeigte", "zeigtest", "zeigte", "zeigten", "zeigtet", "zeigten"],
@@ -191,95 +71,157 @@ const verbs = [
         }
     },
     {
-        "verb": "Regen",
-        "meaning": "To rain",
-        "example": "Es regnet heute.",
+        "verb": "Sparen",
+        "meaning": "To save (money)",
+        "example": "Er spart für ein neues Auto.",
         "conjugation": {
-            "Present": ["regne", "regnest", "regnet", "regnen", "regnet", "regnen"],
-            "Simple Past": ["regnete", "regnetest", "regnete", "regneten", "regnetet", "regneten"],
-            "Present Perfect": ["habe geregnet", "hast geregnet", "hat geregnet", "haben geregnet", "habt geregnet", "haben geregnet"]
+            "Present": ["spare", "sparst", "spart", "sparen", "spart", "sparen"],
+            "Simple Past": ["sparte", "spartest", "sparte", "sparten", "spartet", "sparten"],
+            "Present Perfect": ["habe gespart", "hast gespart", "hat gespart", "haben gespart", "habt gespart", "haben gespart"]
         }
     },
     {
-        "verb": "Schwitzen",
-        "meaning": "To sweat",
-        "example": "Er schwitzt nach dem Laufen.",
+        "verb": "Wischen",
+        "meaning": "To wipe",
+        "example": "Sie wischt den Tisch ab.",
         "conjugation": {
-            "Present": ["schwitze", "schwitzt", "schwitzt", "schwitzen", "schwitzt", "schwitzen"],
-            "Simple Past": ["schwitzte", "schwitztest", "schwitzte", "schwitzten", "schwitztet", "schwitzten"],
-            "Present Perfect": ["habe geschwitzt", "hast geschwitzt", "hat geschwitzt", "haben geschwitzt", "habt geschwitzt", "haben geschwitzt"]
+            "Present": ["wische", "wischst", "wischt", "wischen", "wischt", "wischen"],
+            "Simple Past": ["wischte", "wischtetest", "wischte", "wischten", "wischtet", "wischten"],
+            "Present Perfect": ["habe gewischt", "hast gewischt", "hat gewischt", "haben gewischt", "habt gewischt", "haben gewischt"]
         }
     },
     {
-        "verb": "Ziehen",
-        "meaning": "To pull",
-        "example": "Er zieht den Wagen.",
+        "verb": "Kämmen",
+        "meaning": "To comb",
+        "example": "Sie kämmt ihr Haar.",
         "conjugation": {
-            "Present": ["ziehe", "ziehst", "zieht", "ziehen", "zieht", "ziehen"],
-            "Simple Past": ["zog", "zogst", "zog", "zogen", "zogt", "zogen"],
-            "Present Perfect": ["habe gezogen", "hast gezogen", "hat gezogen", "haben gezogen", "habt gezogen", "haben gezogen"]
+            "Present": ["kämme", "kämmst", "kämmt", "kämmen", "kämmt", "kämmen"],
+            "Simple Past": ["kämmte", "kämptest", "kämmte", "kämmeten", "kämmtet", "kämmeten"],
+            "Present Perfect": ["habe gekämmt", "hast gekämmt", "hat gekämmt", "haben gekämmt", "habt gekämmt", "haben gekämmt"]
         }
     },
     {
-        "verb": "Drücken",
-        "meaning": "To push",
-        "example": "Er drückt die Tür auf.",
+        "verb": "Putzen",
+        "meaning": "To clean",
+        "example": "Er putzt die Fenster.",
         "conjugation": {
-            "Present": ["drücke", "drückst", "drückt", "drücken", "drückt", "drücken"],
-            "Simple Past": ["drückte", "drücktest", "drückte", "drückten", "drücktet", "drückten"],
-            "Present Perfect": ["habe gedrückt", "hast gedrückt", "hat gedrückt", "haben gedrückt", "habt gedrückt", "haben gedrückt"]
+            "Present": ["putze", "putzt", "putzt", "putzen", "putzt", "putzen"],
+            "Simple Past": ["putzte", "putztest", "putzte", "putzten", "putztet", "putzten"],
+            "Present Perfect": ["habe geputzt", "hast geputzt", "hat geputzt", "haben geputzt", "habt geputzt", "haben geputzt"]
         }
     },
     {
-        "verb": "Streiten",
-        "meaning": "To argue",
-        "example": "Sie streiten oft über Kleinigkeiten.",
+        "verb": "Schütteln",
+        "meaning": "To shake",
+        "example": "Er schüttelt den Kopf.",
         "conjugation": {
-            "Present": ["streite", "streitest", "streitet", "streiten", "streitet", "streiten"],
-            "Simple Past": ["stritt", "strittest", "stritt", "stritten", "strittet", "stritten"],
-            "Present Perfect": ["habe gestritten", "hast gestritten", "hat gestritten", "haben gestritten", "habt gestritten", "haben gestritten"]
+            "Present": ["schüttle", "schüttelst", "schüttelt", "schütteln", "schüttelt", "schütteln"],
+            "Simple Past": ["schüttelte", "schütteltest", "schüttelte", "schüttelten", "schütteltet", "schüttelten"],
+            "Present Perfect": ["habe geschüttelt", "hast geschüttelt", "hat geschüttelt", "haben geschüttelt", "habt geschüttelt", "haben geschüttelt"]
         }
     },
     {
-        "verb": "Leben",
-        "meaning": "To live",
-        "example": "Ich lebe in einem kleinen Dorf außerhalb der Stadt.",
+        "verb": "Klopfen",
+        "meaning": "To knock",
+        "example": "Er klopft an die Tür.",
         "conjugation": {
-            "Present": ["lebe", "lebst", "lebt", "leben", "lebt", "leben"],
-            "Simple Past": ["lebte", "lebtest", "lebte", "lebten", "lebtet", "lebten"],
-            "Present Perfect": ["habe gelebt", "hast gelebt", "hat gelebt", "haben gelebt", "habt gelebt", "haben gelebt"]
+            "Present": ["klopfe", "klopfst", "klopft", "klopfen", "klopft", "klopfen"],
+            "Simple Past": ["klopfte", "klopftest", "klopfte", "klopften", "klopftet", "klopften"],
+            "Present Perfect": ["habe geklopft", "hast geklopft", "hat geklopft", "haben geklopft", "habt geklopft", "haben geklopft"]
         }
     },
     {
-        "verb": "Vergessen",
-        "meaning": "To forget",
-        "example": "Er vergisst immer seine Schlüssel.",
+        "verb": "Glauben",
+        "meaning": "To believe",
+        "example": "Er glaubt an Wunder.",
         "conjugation": {
-            "Present": ["vergesse", "vergisst", "vergisst", "vergessen", "vergesst", "vergessen"],
-            "Simple Past": ["vergaß", "vergaßest", "vergaß", "vergaßen", "vergaßt", "vergaßen"],
-            "Present Perfect": ["habe vergessen", "hast vergessen", "hat vergessen", "haben vergessen", "habt vergessen", "haben vergessen"]
+            "Present": ["glaube", "glaubst", "glaubt", "glauben", "glaubt", "glauben"],
+            "Simple Past": ["glaubte", "glaubtest", "glaubte", "glaubten", "glaubtet", "glaubten"],
+            "Present Perfect": ["habe geglaubt", "hast geglaubt", "hat geglaubt", "haben geglaubt", "habt geglaubt", "haben geglaubt"]
         }
     },
     {
-        "verb": "Erinnern",
-        "meaning": "To remember",
-        "example": "Er erinnert sich an die alte Zeit.",
+        "verb": "Feiern",
+        "meaning": "To celebrate",
+        "example": "Sie feiern Geburtstag.",
         "conjugation": {
-            "Present": ["erinnere", "erinnerst", "erinnert", "erinnern", "erinnert", "erinnern"],
-            "Simple Past": ["erinnerte", "erinnertest", "erinnerte", "erinnerten", "erinnertet", "erinnerten"],
-            "Present Perfect": ["habe erinnert", "hast erinnert", "hat erinnert", "haben erinnert", "habt erinnert", "haben erinnert"]
+            "Present": ["feiere", "feierst", "feiert", "feiern", "feiert", "feiern"],
+            "Simple Past": ["feierte", "feiertest", "feierte", "feierten", "feiertet", "feierten"],
+            "Present Perfect": ["habe gefeiert", "hast gefeiert", "hat gefeiert", "haben gefeiert", "habt gefeiert", "haben gefeiert"]
         }
     },
     {
-        "verb": "Einladen",
-        "meaning": "To invite",
-        "example": "Er lädt seine Freunde zum Essen ein.",
+        "verb": "Schreiben",
+        "meaning": "To write",
+        "example": "Er schreibt einen Brief.",
         "conjugation": {
-            "Present": ["lade ein", "lädst ein", "lädt ein", "laden ein", "ladet ein", "laden ein"],
-            "Simple Past": ["lud ein", "ludst ein", "lud ein", "luden ein", "ludt ein", "luden ein"],
-            "Present Perfect": ["habe eingeladen", "hast eingeladen", "hat eingeladen", "haben eingeladen", "habt eingeladen", "haben eingeladen"]
+            "Present": ["schreibe", "schreibst", "schreibt", "schreiben", "schreibt", "schreiben"],
+            "Simple Past": ["schrieb", "schriebst", "schrieb", "schrieben", "schriebt", "schrieben"],
+            "Present Perfect": ["habe geschrieben", "hast geschrieben", "hat geschrieben", "haben geschrieben", "habt geschrieben", "haben geschrieben"]
+        }
+    },
+    {
+        "verb": "Rechnen",
+        "meaning": "To calculate",
+        "example": "Er rechnet die Kosten.",
+        "conjugation": {
+            "Present": ["rechne", "rechnest", "rechnet", "rechnen", "rechnet", "rechnen"],
+            "Simple Past": ["rechnete", "rechnetest", "rechnete", "rechneten", "rechnetet", "rechneten"],
+            "Present Perfect": ["habe gerechnet", "hast gerechnet", "hat gerechnet", "haben gerechnet", "habt gerechnet", "haben gerechnet"]
+        }
+    },
+    {
+        "verb": "Spazieren",
+        "meaning": "To walk",
+        "example": "Er spaziert im Park.",
+        "conjugation": {
+            "Present": ["spaziere", "spazierst", "spaziert", "spazieren", "spaziert", "spazieren"],
+            "Simple Past": ["spazierte", "spaziertest", "spazierte", "spazierten", "spaziertet", "spazierten"],
+            "Present Perfect": ["bin spaziert", "bist spaziert", "ist spaziert", "sind spaziert", "seid spaziert", "sind spaziert"]
+        }
+    },
+    {
+        "verb": "Anrufen",
+        "meaning": "To call (phone)",
+        "example": "Sie ruft ihre Mutter an.",
+        "conjugation": {
+            "Present": ["rufe an", "rufst an", "ruft an", "rufen an", "ruft an", "rufen an"],
+            "Simple Past": ["rief an", "riefst an", "rief an", "riefen an", "rieft an", "riefen an"],
+            "Present Perfect": ["habe angerufen", "hast angerufen", "hat angerufen", "haben angerufen", "habt angerufen", "haben angerufen"]
+        }
+    },
+    {
+        "verb": "Vergleichen",
+        "meaning": "To compare",
+        "example": "Er vergleicht die Preise.",
+        "conjugation": {
+            "Present": ["vergleiche", "vergleichst", "vergleicht", "vergleichen", "vergleicht", "vergleichen"],
+            "Simple Past": ["verglich", "verglichst", "verglich", "verglichen", "verglicht", "verglichen"],
+            "Present Perfect": ["habe verglichen", "hast verglichen", "hat verglichen", "haben verglichen", "habt verglichen", "haben verglichen"]
+        }
+    },
+    {
+        "verb": "Verstehen",
+        "meaning": "To understand",
+        "example": "Er versteht Deutsch.",
+        "conjugation": {
+            "Present": ["verstehe", "verstehst", "versteht", "verstehen", "versteht", "verstehen"],
+            "Simple Past": ["verstand", "verstandest", "verstand", "verstanden", "verstandet", "verstanden"],
+            "Present Perfect": ["habe verstanden", "hast verstanden", "hat verstanden", "haben verstanden", "habt verstanden", "haben verstanden"]
+        }
+    },
+    {
+        "verb": "Erklären",
+        "meaning": "To explain",
+        "example": "Er erklärt das Problem.",
+        "conjugation": {
+            "Present": ["erkläre", "erklärst", "erklärt", "erklären", "erklärt", "erklären"],
+            "Simple Past": ["erklärte", "erklärtest", "erklärte", "erklärten", "erklärtet", "erklärten"],
+            "Present Perfect": ["habe erklärt", "hast erklärt", "hat erklärt", "haben erklärt", "habt erklärt", "haben erklärt"]
         }
     }
+ 
+   
     // Tilføj de resterende verber her...
 ];
 
