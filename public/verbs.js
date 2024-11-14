@@ -14,12 +14,12 @@ async function fetchRandomVerb() {
     console.log("Fetched verb:", currentVerb);
 
     conjugations = [
-      { pronoun: 'ich', present: currentVerb.conjugation.Present[0], simplePast: currentVerb.conjugation['Simple Past'][0], presentPerfect: currentVerb.conjugation['Present Perfect'][0] },
-      { pronoun: 'du', present: currentVerb.conjugation.Present[1], simplePast: currentVerb.conjugation['Simple Past'][1], presentPerfect: currentVerb.conjugation['Present Perfect'][1] },
-      { pronoun: 'er/sie/es', present: currentVerb.conjugation.Present[2], simplePast: currentVerb.conjugation['Simple Past'][2], presentPerfect: currentVerb.conjugation['Present Perfect'][2] },
-      { pronoun: 'wir', present: currentVerb.conjugation.Present[3], simplePast: currentVerb.conjugation['Simple Past'][3], presentPerfect: currentVerb.conjugation['Present Perfect'][3] },
-      { pronoun: 'ihr', present: currentVerb.conjugation.Present[4], simplePast: currentVerb.conjugation['Simple Past'][4], presentPerfect: currentVerb.conjugation['Present Perfect'][4] },
-      { pronoun: 'sie/Sie', present: currentVerb.conjugation.Present[5], simplePast: currentVerb.conjugation['Simple Past'][5], presentPerfect: currentVerb.conjugation['Present Perfect'][5] }
+      { pronoun: 'ich', present: currentVerb.conjugation.Present[0], presentPerfect: currentVerb.conjugation['Present Perfect'][0] },
+      { pronoun: 'du', present: currentVerb.conjugation.Present[1], presentPerfect: currentVerb.conjugation['Present Perfect'][1] },
+      { pronoun: 'er/sie/es', present: currentVerb.conjugation.Present[2], presentPerfect: currentVerb.conjugation['Present Perfect'][2] },
+      { pronoun: 'wir', present: currentVerb.conjugation.Present[3], presentPerfect: currentVerb.conjugation['Present Perfect'][3] },
+      { pronoun: 'ihr', present: currentVerb.conjugation.Present[4], presentPerfect: currentVerb.conjugation['Present Perfect'][4] },
+      { pronoun: 'sie/Sie', present: currentVerb.conjugation.Present[5], presentPerfect: currentVerb.conjugation['Present Perfect'][5] }
     ];
 
     displayVerb(currentVerb);
@@ -45,7 +45,7 @@ function displayVerb(verb) {
         <tr>
           <th>Pronoun</th>
           <th>Present</th>
-          <th>Simple Past</th>
+          
           <th>Present Perfect</th>
         </tr>
       </thead>
@@ -54,7 +54,6 @@ function displayVerb(verb) {
           <tr>
             <td>${conjugation.pronoun}</td>
             <td id="${conjugation.pronoun}_present"></td>
-            <td id="${conjugation.pronoun}_simplePast"></td>
             <td id="${conjugation.pronoun}_presentPerfect"></td>
           </tr>
         `).join('')}
@@ -66,17 +65,22 @@ function displayVerb(verb) {
 
 function showConjugation() {
   console.log("Showing conjugation stage:", conjugationStage);
-  const stages = ['present', 'simplePast', 'presentPerfect'];
+  const stages = ['present', 'presentPerfect'];
+
   if (conjugationStage < stages.length * conjugations.length) {
     const stage = stages[Math.floor(conjugationStage / conjugations.length)];
     const conjugation = conjugations[conjugationStage % conjugations.length];
     document.getElementById(`${conjugation.pronoun}_${stage}`).innerText = conjugation[stage];
     conjugationStage++;
-  } else {
-    document.getElementById('next-verb').style.display = 'block';
-    document.getElementById('next-conjugation').style.display = 'none';
+
+    // NYT: Skift knappen efter sidste bøjning
+    if (conjugationStage === stages.length * conjugations.length) {
+      document.getElementById('next-verb').style.display = 'block';
+      document.getElementById('next-conjugation').style.display = 'none';
+    }
   }
 }
+
 
 document.getElementById('next-conjugation').addEventListener('click', showConjugation);
 document.getElementById('next-verb').addEventListener('click', fetchRandomVerb);
