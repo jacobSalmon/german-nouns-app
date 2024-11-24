@@ -1,5 +1,6 @@
 console.log("Starting the server...");
 import express from 'express';
+//import basicAuth from 'basic-auth';
 import { MongoClient, ServerApiVersion } from 'mongodb';
 import dotenv from 'dotenv';
 import path from 'path';
